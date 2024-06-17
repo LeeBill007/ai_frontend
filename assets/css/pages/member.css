@@ -1,0 +1,176 @@
+.member-card .card-header{
+    background-color: transparent;
+    border: 0;
+    padding: 10px 30px;
+}
+
+.member-card .card-header h3{
+    border-left: 4px solid var(--secondary-color);
+    font-size: 1.2em;
+    padding-left: 10px;
+    margin: 10px 0;
+}
+
+/* Common */
+#wrapper a{
+    text-decoration: none;
+}
+
+label.required::before{
+    content: "*";
+    color: red;
+}
+
+/* form樣式1 */
+.member-form-style1 label.main-label{
+    width: 170px;
+    max-width: 90%;
+    text-align: right;
+    margin-left: auto;
+    display: block;    
+}
+
+.member-form-style1 .form-ele{
+    max-width: 100%;
+    width: 400px;
+}
+
+.member-form-style1 .upload-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.member-form-style1 .upload-area label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    border-radius: 0 5px 5px 0;
+    margin: 0;
+}
+
+.member-form-style1 .upload-area input{
+    flex: 1;
+}
+
+.member-form-style1 .form-control,
+.member-form-style1 .form-select{
+    height: 45px;
+    width: 100%;
+    max-width: 100%;
+
+}
+
+.member-form-style1 .row{
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .member-form-style1 label.main-label{
+        margin-left: 0;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+}
+
+/* NavTabs */
+.nav-tabs .nav-link{
+    color: #000;
+    border: 0;
+    padding-bottom: var(--bs-card-spacer-y);
+}
+
+.nav-tabs .nav-link:focus, 
+.nav-tabs .nav-link:hover {
+    border: 0;
+}
+
+.nav-tabs .nav-link.active{
+    border: 0;
+    border-bottom: 3px solid var(--secondary-color);
+    color: var(--secondary-color);
+    font-weight: bold;    
+    padding-bottom: var(--bs-card-spacer-y);
+}
+
+
+/* 電腦版預設顯示tab */
+@media (min-width: 769px) { 
+    #memberTabCollapse{
+        display: block;
+        max-height: none;
+    }
+}
+
+/* 手機版tab */
+@media (max-width: 768px) { 
+    #memberCategoryTab{
+        --bs-nav-link-padding-x: 0.6rem;
+        font-size: 0.9em;
+    }
+
+    #memberTabToggler{
+        color: var(--secondary-color);
+        border-bottom: 3px solid var(--secondary-color);
+        padding-bottom: 5px;
+        display: flex;
+        align-items: center;
+    }
+
+    #memberTabToggler span{
+        margin-right: 5px;
+    }
+
+    #memberTabToggler::after{
+        content: '';
+        width: 11px;
+        height: 13px;
+        background-image: url(../../icons/arrow-left-secondary.svg);
+        background-size: 100% 100%;
+        transform: rotate(-90deg);
+        display: inline-block;
+        transition: transform 0.1s;
+    }
+
+    #memberTabToggler[aria-expanded=true]::after{
+        transform: rotate(90deg);
+    }
+
+    .nav-tabs{
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .nav-tabs .nav-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--grey-color);
+        width: 100%;
+        margin: 5px 0;
+        border-radius: 5px;
+    }
+
+    .nav-tabs .nav-link{
+        padding: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 12px 0;
+        color: var(--muted-color);
+    }
+
+    .nav-tabs .nav-link.active{
+        border: 0;
+        background-color: transparent;
+        color: #000;
+        font-weight: 400;
+        padding: 12px 0;
+        color: var(--muted-color);
+    }
+
+}

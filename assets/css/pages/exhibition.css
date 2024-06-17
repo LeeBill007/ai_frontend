@@ -1,0 +1,428 @@
+/* Common */
+#wrapper a:not(.btn){
+  text-decoration: none;
+}
+
+
+/* 展會資訊頁籤 */
+.segments {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.segments .segment{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background: var(--grey-color);
+  padding: 15px 5px;
+  color: var(--secondary-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.segments .segment:first-child{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.segments .segment:last-child{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.segments .segment.active{
+  background-color: #FFF;
+}
+
+.segments .segment img{
+  margin-right: 10px;
+}
+
+/* 篩選 */
+.filter-group{
+  display: flex;
+}
+
+.filter-group .input-prefix{
+  position: relative;
+}
+
+.filter-group .search-suffix input{
+  padding-right: 90px !important;
+}
+
+.filter-group .search-btn{
+  position: absolute;
+  right: 15px;
+  top: 0;
+  bottom: 0;
+  height: 30px;
+  margin: auto;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+
+.filter-group .search-btn img{
+  width: 13px;
+  margin-right: 5px;
+}
+
+.filter-group .input-prefix input, 
+.filter-group .input-prefix select,
+.filter-group button{
+  border-radius: 0;
+}
+
+.filter-group .input-prefix:first-child input{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.filter-group .input-prefix:last-child select{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.filter-group .input-prefix input,
+.filter-group .input-prefix select{
+  padding: 16px 15px;
+  color: var(--muted-color);
+  border: 0;
+}
+
+.filter-group .input-prefix:not(:last-child){
+  border-right: 1px solid var(--grey-color);
+  border-image: linear-gradient(180deg, 
+    #FFF 0%, 
+    #FFF 20%, 
+    var(--grey-color) 21%, 
+    var(--grey-color) 80%,
+    #FFF 81%, 
+    #FFF 100%) 1 100%;
+}
+
+.filter-group button{
+  display: flex;
+  align-items: center;
+}
+
+.filter-group .input-prefix{
+  position: relative;
+}
+
+.filter-group .input-prefix.icon input,
+.filter-group .input-prefix.icon select{
+  padding-left: 40px;
+}
+
+.filter-group .input-prefix.icon::before{
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.filter-group .input-prefix.icon-keyword::before{
+  background-image: url(../../icons/input-keyword.svg);
+}
+
+.filter-group .input-prefix.icon-country::before{
+  background-image: url(../../icons/input-country.svg);
+}
+
+.filter-group .input-prefix.icon-calendar::before{
+  background-image: url(../../icons/input-calendar.svg);
+}
+
+.filter-group .btn .icon{
+  width: 20px;
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .filter-group{
+    flex-flow: column;
+  }
+
+  .filter-group .input-prefix:not(:last-child){
+    border: 0;
+  }  
+
+  .filter-group .input-prefix:first-child input{
+    border-radius: 5px 5px 0 0;
+  }
+  .filter-group .input-prefix:last-child select{
+    border-radius: 0 0 5px 5px;
+  }  
+}
+
+/* 關鍵字快速搜尋 */
+.keywords-row .title{
+  font-weight: bold;
+  font-size: 1em;
+}
+.keywords-row .title a{
+  color: inherit;
+}
+.keywords-row .title .secondary{
+  color: var(--secondary-color);
+}
+
+.keywords-row .badge{
+  display: inline-block;
+  color: var(--secondary-color);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.keywords-row .badge::before{
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+  background-image: url(../../icons/close-secondary.svg);
+}
+
+.keywords-row .badges{
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  row-gap: 5px;
+}
+
+.keywords-row .badges .clear{
+  color: var(--muted-color);
+  border-bottom: 1px solid var(--muted-color);
+}
+
+.keywords-row .badge:not(:last-child){
+  margin-right: 10px;
+}
+
+/* 展會項目 */
+.recommend-badge{
+  margin-top: 2px;
+  display: inline-block;
+  border-radius: 50px;
+  background: var(--secondary-color);
+  color: #FFF;
+  padding: 3px 15px;
+  font-size: 0.8em;
+}
+
+.exhibition-item .info{
+  min-height: 25px;
+}
+
+.exhibition-item .content{
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+  min-height: 150px;
+  overflow: hidden;
+}
+
+.exhibition-item .title{
+  font-weight: bold;
+  font-size: 1.2em;
+  max-height: 50px;
+  height: 50px;
+  overflow: hidden;  
+}
+.exhibition-item .title a{
+  color: inherit;
+}
+
+.favorite-btn img{
+  display: none;
+}
+
+.favorite-btn img.off{
+  display: block;
+}
+
+.favorite-btn.active img.on{
+  display: block;
+}
+
+.favorite-btn.active img.off{
+  display: none;
+}
+
+
+.exhibition-item .date-icon{
+  font-size: 0.9em;
+}
+
+.exhibition-item .locate-icon{
+  font-size: 0.9em;
+}
+
+.exhibition-item .hashtags{
+  font-size: 0.9em;
+  color: var(--muted-color);
+}
+
+.exhibition-item .hashtags .tag:not(:last-child){
+  margin-right: 5px;
+}
+
+.exhibition-item .bottom-actions button,
+.exhibition-item .bottom-actions a{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.exhibition-item .bottom-actions span{
+  flex: 1;
+}
+
+/* 展會詳細頁滿版圖 */
+.exhibition-detail-image{
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.exhibition-detail-info1,
+.exhibition-detail-info2,
+.exhibition-detail-info3,
+.exhibition-detail-info4{
+  border: 1px solid var(--grey-color);
+  border-radius: 10px;
+  padding: 15px;  
+}
+
+.exhibition-detail-info1 .left-info,
+.exhibition-detail-info1 .center-info{
+  border-right: 1px solid var(--grey-color);
+  border-image: linear-gradient(180deg, #ffffff00 0%, #ffffff00 5%, var(--grey-color) 6%, var(--grey-color) 95%, #ffffff00 96%, #ffffff00 100%) 1 100%;
+}
+
+.exhibition-detail-info1 h1{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+  
+.exhibition-detail-info1 .hashtags .hashtag:not(:last-child){
+  margin-right: 5px;
+}
+
+.exhibition-detail-info1 .hashtag{
+  margin-top: 10px;
+  display: inline-block;
+  border: 2px solid var(--grey-color);
+  color: var(--secondary-color);
+  border-radius: 25px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+}
+
+.exhibition-detail-info2 .row{
+  margin-top: 10px;
+}
+
+.exhibition-detail-info2 .subtitle-col{
+  font-weight: bold;
+}
+
+.exhibition-detail-info3 .subtitle-col{
+  font-weight: bold;
+}
+
+.exhibition-detail-info3 .btn{
+  width: 150px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.exhibition-detail-info3 .btn span{
+  flex: 1;
+}
+
+.exhibition-detail-info4 table{
+  border-collapse: initial;
+  --bs-table-bg: #E7E7E5;
+  --bs-table-striped-bg: #F2F2F2;
+}
+
+.exhibition-detail-info4 table th{
+  background-color: #183F89;
+  color: #FFF;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.exhibition-detail-info4 table td{
+  text-align: center;
+}
+
+.exhibition-detail-actions{
+  display: flex;
+}
+
+.exhibition-detail-actions .btn{
+  width: 150px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.exhibition-detail-actions .btn span{
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .exhibition-detail-info1,
+  .exhibition-detail-info2,
+  .exhibition-detail-info3,
+  .exhibition-detail-info4 {
+    padding: 0;
+    border: 0;
+  }
+
+  .exhibition-detail-info1 .left-info,
+  .exhibition-detail-info1 .center-info{
+    position: relative;
+    border: 0;
+  }  
+
+  .exhibition-detail-info1 .row > div{
+    padding: 20px;
+  }
+
+  .exhibition-detail-info1 .left-info::after,
+  .exhibition-detail-info1 .center-info::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px; /* 设置边框的高度 */
+    background: linear-gradient(180deg, #ffffff00 0%, #ffffff00 5%, var(--grey-color) 6%, var(--grey-color) 95%, #ffffff00 96%, #ffffff00 100%);
+  }  
+}
+
+/* .exhibition-detail-info4 .table-striped > tbody > tr:nth-of-type(odd)>* {
+  --bs-table-color-type: var(--bs-table-striped-color);
+  --bs-table-bg-type: var(--bs-table-striped-bg);
+} */
+
